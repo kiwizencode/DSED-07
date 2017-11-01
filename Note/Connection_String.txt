@@ -1,0 +1,4 @@
+﻿Server Name : (localdb)\ProjectsV13
+
+
+Data Source=(localdb)\ProjectsV13;Initial Catalog=IMSystem;Integrated Security=True
