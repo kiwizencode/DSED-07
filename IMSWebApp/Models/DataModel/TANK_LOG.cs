@@ -5,12 +5,11 @@ namespace IMSWebApp.Models.DataModel
 {
     public partial class TANK_LOG
     {
-
         public TANK_LOG()
         {
           this.DAILY_LOG = new HashSet<DAILY_LOG>();
         }
-
+        [Key]
         public int ID_PK { get; set; }
         [Display(Name = "Period Date")]
         [DataType(DataType.DateTime)]

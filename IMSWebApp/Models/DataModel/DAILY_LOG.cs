@@ -5,6 +5,7 @@ namespace IMSWebApp.Models.DataModel
 {
     public class DAILY_LOG
     {
+        [Key]
         public int ID_PK { get; set; }
         [Display(Name = "Daily Date")]
         [DataType(DataType.DateTime)]

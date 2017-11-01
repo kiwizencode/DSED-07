@@ -9,7 +9,7 @@ namespace IMSWebApp.Models.DataModel
         {
             this.TANK_LOG = new HashSet<TANK_LOG>();
         }
-
+        [Key]
         public int ID_PK { get; set; }
         [Display(Name = "Scientific Name")]
         public string SCIENTIFIC { get; set; }

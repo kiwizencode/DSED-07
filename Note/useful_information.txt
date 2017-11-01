@@ -1,0 +1,6 @@
+﻿Server Name : (localdb)\ProjectsV13
+
+
+Data Source=(localdb)\ProjectsV13;Initial Catalog=IMSystem;Integrated Security=True
+
+https://docs.microsoft.com/en-us/ef/core/modeling/relational/fk-constraints

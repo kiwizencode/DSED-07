@@ -9,7 +9,7 @@ namespace IMSWebApp.Models.DataModel
         {
             this.DAILY_LOG = new HashSet<DAILY_LOG>();
         }
-
+        [Key]
         public int ID_PK { get; set; }
         [Display(Name = "Mortality Reason")]
         public string TEXT { get; set; }

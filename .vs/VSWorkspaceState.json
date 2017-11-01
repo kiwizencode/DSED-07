@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Database",
+    "\\IMSWebApp",
+    "\\Note"
   ],
-  "SelectedNode": "\\LICENSE",
+  "SelectedNode": "\\IMSWebApp\\IMSWebApp.sln",
   "PreviewInSolutionExplorer": false
 }
