@@ -46,7 +46,7 @@ namespace IMSWebApp
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=SPECIES}/{action=Index}/{id?}");  //"{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=MORTALITies}/{action=Index}/{id?}");  //"{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
