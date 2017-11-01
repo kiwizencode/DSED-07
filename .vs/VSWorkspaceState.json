@@ -1,9 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ImportData",
-    "\\ImportData\\ExtractPDFApprovedSpecies"
+    "\\ImportData"
   ],
-  "SelectedNode": "\\ImportData\\ExtractPDFApprovedSpecies\\ExtractPDFApprovedSpecies.sln",
+  "SelectedNode": "\\ImportData\\ExtractPDFApprovedSpecies",
   "PreviewInSolutionExplorer": false
 }

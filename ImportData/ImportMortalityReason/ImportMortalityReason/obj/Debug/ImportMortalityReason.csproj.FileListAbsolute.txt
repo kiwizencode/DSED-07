@@ -1,0 +1,7 @@
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ImportMortalityReason\ImportMortalityReason\bin\Debug\ImportMortalityReason.exe.config
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ImportMortalityReason\ImportMortalityReason\bin\Debug\ImportMortalityReason.exe
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ImportMortalityReason\ImportMortalityReason\bin\Debug\ImportMortalityReason.pdb
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ImportMortalityReason\ImportMortalityReason\obj\Debug\ImportMortalityReason.csprojResolveAssemblyReference.cache
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ImportMortalityReason\ImportMortalityReason\obj\Debug\ImportMortalityReason.csproj.CoreCompileInputs.cache
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ImportMortalityReason\ImportMortalityReason\obj\Debug\ImportMortalityReason.exe
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ImportMortalityReason\ImportMortalityReason\obj\Debug\ImportMortalityReason.pdb
