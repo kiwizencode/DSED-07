@@ -17,6 +17,7 @@ namespace IMSWebApp.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .HasDefaultSchema("dbo")
                 .HasAnnotation("ProductVersion", "2.0.0-rtm-26452")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -25,25 +26,28 @@ namespace IMSWebApp.Migrations
                     b.Property<int>("ID_PK")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("COMMENT");
+                    b.Property<string>("COMMENT")
+                        .HasColumnType("nvarchar(100)");
 
-                    b.Property<DateTime>("DAILY_DATE");
+                    b.Property<DateTime>("DAILY_DATE")
+                        .HasColumnType("datetime");
 
                     b.Property<int>("LOG_FK");
-
-                    b.Property<int?>("MORTALITYID_PK");
 
                     b.Property<int>("QTY");
 
                     b.Property<int>("REASON_FK");
 
-                    b.Property<int?>("TANK_LOGID_PK");
+                    b.Property<int?>("TANK_LOGID_PK1");
 
                     b.HasKey("ID_PK");
 
-                    b.HasIndex("MORTALITYID_PK");
+                    b.HasIndex("LOG_FK")
+                        .IsUnique();
 
-                    b.HasIndex("TANK_LOGID_PK");
+                    b.HasIndex("REASON_FK");
+
+                    b.HasIndex("TANK_LOGID_PK1");
 
                     b.ToTable("DAILY_LOG");
                 });
@@ -53,7 +57,9 @@ namespace IMSWebApp.Migrations
                     b.Property<int>("ID_PK")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("TEXT");
+                    b.Property<string>("TEXT")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("ID_PK");
 
@@ -65,9 +71,13 @@ namespace IMSWebApp.Migrations
                     b.Property<int>("ID_PK")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("COMMON");
+                    b.Property<string>("COMMON")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("SCIENTIFIC");
+                    b.Property<string>("SCIENTIFIC")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("ID_PK");
 
@@ -79,13 +89,13 @@ namespace IMSWebApp.Migrations
                     b.Property<int>("ID_PK")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("COMMENT");
+                    b.Property<string>("COMMENT")
+                        .HasColumnType("nvarchar(100)");
 
-                    b.Property<DateTime>("PERIOD_DATE");
+                    b.Property<DateTime>("PERIOD_DATE")
+                        .HasColumnType("datetime");
 
                     b.Property<int>("QTY");
-
-                    b.Property<int?>("SPECIESID_PK");
 
                     b.Property<int>("SPECIES_FK");
 
@@ -93,27 +103,34 @@ namespace IMSWebApp.Migrations
 
                     b.HasKey("ID_PK");
 
-                    b.HasIndex("SPECIESID_PK");
+                    b.HasIndex("SPECIES_FK");
 
                     b.ToTable("TANK_LOG");
                 });
 
             modelBuilder.Entity("IMSWebApp.Models.DataModel.DAILY_LOG", b =>
                 {
+                    b.HasOne("IMSWebApp.Models.DataModel.TANK_LOG", "TANK_LOG")
+                        .WithOne()
+                        .HasForeignKey("IMSWebApp.Models.DataModel.DAILY_LOG", "LOG_FK")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("IMSWebApp.Models.DataModel.MORTALITY", "MORTALITY")
                         .WithMany("DAILY_LOG")
-                        .HasForeignKey("MORTALITYID_PK");
+                        .HasForeignKey("REASON_FK")
+                        .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("IMSWebApp.Models.DataModel.TANK_LOG", "TANK_LOG")
+                    b.HasOne("IMSWebApp.Models.DataModel.TANK_LOG")
                         .WithMany("DAILY_LOG")
-                        .HasForeignKey("TANK_LOGID_PK");
+                        .HasForeignKey("TANK_LOGID_PK1");
                 });
 
             modelBuilder.Entity("IMSWebApp.Models.DataModel.TANK_LOG", b =>
                 {
                     b.HasOne("IMSWebApp.Models.DataModel.SPECIES", "SPECIES")
                         .WithMany("TANK_LOG")
-                        .HasForeignKey("SPECIESID_PK");
+                        .HasForeignKey("SPECIES_FK")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

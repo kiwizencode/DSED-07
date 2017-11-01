@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IMSWebApp.Models.DataModel
 {
@@ -9,8 +10,10 @@ namespace IMSWebApp.Models.DataModel
         {
             this.DAILY_LOG = new HashSet<DAILY_LOG>();
         }
-        [Key]
+        [Key, Required]
         public int ID_PK { get; set; }
+
+        [Column(TypeName = "nvarchar(100)"), Required]
         [Display(Name = "Mortality Reason")]
         public string TEXT { get; set; }
 
