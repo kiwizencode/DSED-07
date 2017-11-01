@@ -10,3 +10,5 @@ https://docs.microsoft.com/en-us/ef/core/modeling/relational/fk-constraints
 https://docs.microsoft.com/en-us/ef/core/modeling/keys
 https://docs.microsoft.com/en-us/ef/core/modeling/required-optional
 https://docs.microsoft.com/en-us/ef/core/modeling/relationships
+
+https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/migrations

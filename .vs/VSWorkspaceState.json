@@ -3,6 +3,7 @@
     "",
     "\\Database",
     "\\IMSWebApp",
+    "\\IMSWebApp\\Migrations",
     "\\Note"
   ],
   "SelectedNode": "\\IMSWebApp\\IMSWebApp.sln",
