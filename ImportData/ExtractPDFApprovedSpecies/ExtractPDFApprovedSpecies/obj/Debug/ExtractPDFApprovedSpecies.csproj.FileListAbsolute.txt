@@ -1,0 +1,11 @@
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ExtractPDFApprovedSpecies\ExtractPDFApprovedSpecies\obj\Debug\ExtractPDFApprovedSpecies.csproj.CoreCompileInputs.cache
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ExtractPDFApprovedSpecies\ExtractPDFApprovedSpecies\bin\Debug\PDF\MPI_Approved_Species_20170413.pdf
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ExtractPDFApprovedSpecies\ExtractPDFApprovedSpecies\bin\Debug\ExtractPDFApprovedSpecies.exe.config
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ExtractPDFApprovedSpecies\ExtractPDFApprovedSpecies\bin\Debug\ExtractPDFApprovedSpecies.exe
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ExtractPDFApprovedSpecies\ExtractPDFApprovedSpecies\bin\Debug\ExtractPDFApprovedSpecies.pdb
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ExtractPDFApprovedSpecies\ExtractPDFApprovedSpecies\bin\Debug\ExtractPDF.Lib.dll
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ExtractPDFApprovedSpecies\ExtractPDFApprovedSpecies\bin\Debug\itextsharp.dll
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ExtractPDFApprovedSpecies\ExtractPDFApprovedSpecies\bin\Debug\ExtractPDF.Lib.pdb
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ExtractPDFApprovedSpecies\ExtractPDFApprovedSpecies\obj\Debug\ExtractPDFApprovedSpecies.csprojResolveAssemblyReference.cache
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ExtractPDFApprovedSpecies\ExtractPDFApprovedSpecies\obj\Debug\ExtractPDFApprovedSpecies.exe
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ExtractPDFApprovedSpecies\ExtractPDFApprovedSpecies\obj\Debug\ExtractPDFApprovedSpecies.pdb

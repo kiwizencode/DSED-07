@@ -1,11 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Database",
-    "\\IMSWebApp",
-    "\\IMSWebApp\\Migrations",
-    "\\Note"
+    "\\ImportData",
+    "\\ImportData\\ExtractPDFApprovedSpecies"
   ],
-  "SelectedNode": "\\IMSWebApp\\IMSWebApp.sln",
+  "SelectedNode": "\\ImportData\\ExtractPDFApprovedSpecies\\ExtractPDFApprovedSpecies.sln",
   "PreviewInSolutionExplorer": false
 }
