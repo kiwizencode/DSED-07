@@ -1,0 +1,5 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/ImportData/ExtractPDFApprovedSpecies/ExtractPDFApprovedSpecies/PDF/MPI_Approved_Species_20170413.pdf
