@@ -1,0 +1,11 @@
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\IMSWebApp\bin\Debug\netcoreapp2.0\IMSWebApp.deps.json
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\IMSWebApp\bin\Debug\netcoreapp2.0\IMSWebApp.runtimeconfig.json
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\IMSWebApp\bin\Debug\netcoreapp2.0\IMSWebApp.runtimeconfig.dev.json
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\IMSWebApp\bin\Debug\netcoreapp2.0\IMSWebApp.dll
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\IMSWebApp\bin\Debug\netcoreapp2.0\IMSWebApp.pdb
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\IMSWebApp\obj\Debug\netcoreapp2.0\IMSWebApp.csproj.CoreCompileInputs.cache
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\IMSWebApp\obj\Debug\netcoreapp2.0\IMSWebApp.AssemblyInfoInputs.cache
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\IMSWebApp\obj\Debug\netcoreapp2.0\IMSWebApp.AssemblyInfo.cs
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\IMSWebApp\obj\Debug\netcoreapp2.0\IMSWebApp.dll
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\IMSWebApp\obj\Debug\netcoreapp2.0\IMSWebApp.pdb
+C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\IMSWebApp\obj\Debug\netcoreapp2.0\IMSWebApp.csprojResolveAssemblyReference.cache
