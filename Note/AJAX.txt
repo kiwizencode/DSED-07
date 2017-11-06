@@ -1,0 +1,15 @@
+https://www.sitepoint.com/community/t/how-to-properly-populate-html-table-with-jquery-ajax-using-json-formatted-data/202187
+
+https://www.sitepoint.com/ajaxjquery-getjson-simple-example/
+
+
+
+
+https://getbootstrap.com/docs/3.3/components/#jumbotron
+
+http://www.c-sharpcorner.com/article/call-web-api-using-jquery-ajax-in-asp-net-core/
+
+
+
+php code 
+http://phppot.com/jquery/read-display-json-data-using-jquery-ajax/

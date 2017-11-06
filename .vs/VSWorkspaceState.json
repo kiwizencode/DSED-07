@@ -3,8 +3,10 @@
     "",
     "\\ImportData",
     "\\IMSWebApp",
+    "\\IMSWebApp\\v1.2.1",
+    "\\IMSWebApp\\v1.2.1\\IMSWebApp",
     "\\Note"
   ],
-  "SelectedNode": "\\IMSWebApp\\v1.2.1",
+  "SelectedNode": "\\IMSWebApp\\v1.2.1\\IMSWebApp\\IMSWebApp.sln",
   "PreviewInSolutionExplorer": false
 }
