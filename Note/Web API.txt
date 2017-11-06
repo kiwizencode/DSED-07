@@ -1,0 +1,10 @@
+https://docs.microsoft.com/en-us/aspnet/web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
+
+
+https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/powershell#using-ef-core-tools-and-ef6-side-by-side
+
+Install-Package Microsoft.EntityFrameworkCore.Tools
+
+Install-Package Microsoft.EntityFrameworkCore.SqlServer
+
+Scaffold-DbContext "Data Source=(localdb)\ProjectsV13;Initial Catalog=IMSystem;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
