@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using IMSWebApp.Models;
 
 namespace IMSWebApp.Controllers
 {
-    [Produces("application/json")]
-    [Route("api/Species")]
     public class SpeciesController : Controller
     {
         private readonly IMSystemContext _context;
@@ -20,105 +18,131 @@ namespace IMSWebApp.Controllers
             _context = context;
         }
 
-        // GET: api/Species
-        [HttpGet]
-        //public IEnumerable<Species> GetSpecies()
-        //{
-        //    return _context.Species;
-        //}
-        public async Task<IEnumerable<Species>> GetSpecies()
+        // GET: Species
+        public async Task<IActionResult> Index()
         {
-            return await _context.Species.ToListAsync();
+            return View(await _context.Species.ToListAsync());
+            //return View(species);
         }
 
-        // GET: api/Species/5
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetSpecies([FromRoute] int id)
+        // GET: Species/Details/5
+        public async Task<IActionResult> Details(int? id)
         {
-            if (!ModelState.IsValid)
+            if (id == null)
             {
-                return BadRequest(ModelState);
+                return NotFound();
             }
 
-            var species = await _context.Species.SingleOrDefaultAsync(m => m.IdPk == id);
-
+            var species = await _context.Species
+                .SingleOrDefaultAsync(m => m.IdPk == id);
             if (species == null)
             {
                 return NotFound();
             }
 
-            return Ok(species);
+            return View(species);
         }
 
-        // PUT: api/Species/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutSpecies([FromRoute] int id, [FromBody] Species species)
+        // GET: Species/Create
+        public IActionResult Create()
         {
-            if (!ModelState.IsValid)
+            return View();
+        }
+
+        // POST: Species/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("IdPk,Common,Scientific")] Species species)
+        {
+            if (ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                _context.Add(species);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(species);
+        }
+
+        // GET: Species/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
             }
 
+            var species = await _context.Species.SingleOrDefaultAsync(m => m.IdPk == id);
+            if (species == null)
+            {
+                return NotFound();
+            }
+            return View(species);
+        }
+
+        // POST: Species/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("IdPk,Common,Scientific")] Species species)
+        {
             if (id != species.IdPk)
             {
-                return BadRequest();
+                return NotFound();
             }
 
-            _context.Entry(species).State = EntityState.Modified;
-
-            try
+            if (ModelState.IsValid)
             {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!SpeciesExists(id))
+                try
                 {
-                    return NotFound();
+                    _context.Update(species);
+                    await _context.SaveChangesAsync();
                 }
-                else
+                catch (DbUpdateConcurrencyException)
                 {
-                    throw;
+                    if (!SpeciesExists(species.IdPk))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
                 }
+                return RedirectToAction(nameof(Index));
             }
-
-            return NoContent();
+            return View(species);
         }
 
-        // POST: api/Species
-        [HttpPost]
-        public async Task<IActionResult> PostSpecies([FromBody] Species species)
+        // GET: Species/Delete/5
+        public async Task<IActionResult> Delete(int? id)
         {
-            if (!ModelState.IsValid)
+            if (id == null)
             {
-                return BadRequest(ModelState);
+                return NotFound();
             }
 
-            _context.Species.Add(species);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetSpecies", new { id = species.IdPk }, species);
-        }
-
-        // DELETE: api/Species/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteSpecies([FromRoute] int id)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var species = await _context.Species.SingleOrDefaultAsync(m => m.IdPk == id);
+            var species = await _context.Species
+                .SingleOrDefaultAsync(m => m.IdPk == id);
             if (species == null)
             {
                 return NotFound();
             }
 
+            return View(species);
+        }
+
+        // POST: Species/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var species = await _context.Species.SingleOrDefaultAsync(m => m.IdPk == id);
             _context.Species.Remove(species);
             await _context.SaveChangesAsync();
-
-            return Ok(species);
+            return RedirectToAction(nameof(Index));
         }
 
         private bool SpeciesExists(int id)
