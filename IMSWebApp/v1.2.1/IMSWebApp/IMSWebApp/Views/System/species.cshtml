@@ -10,7 +10,14 @@
 
 <div class="panel panel-info">
     <!-- Panel Heading -->
-    <div class="panel-heading">@ViewBag.Title</div>
+    <div class="panel-heading">
+        <h3>
+            <button class='btn-info btn-xs' name='btnCreate'>
+                <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Create
+            </button>
+            &nbsp;&nbsp;@ViewBag.Title
+        </h3>
+    </div>
     <!-- Panel Body -->
     <div class="panel-body">
         <table class="table table-bordered table-striped table-condensed" id="Table">
@@ -18,13 +25,15 @@
                 <th>Record Id</th>
                 <th>Scientific Name</th>
                 <th>Common Name</th>
+                <th>Action</th>
             </tr>   <!--End of table-row -->
         </table>   <!--End of table -->
     </div> <!--End of Panel Body -->
 </div>
 
 <script>
-    $(document).ready(function () {
+    /*  <span class='glyphicons glyphicon-pencil'></span> */
+    $(document).ready( () => {
         $.ajax({
             type: "GET",
             url: "/api/SpeciesAPI",
@@ -38,6 +47,10 @@
                         "<td id='IdPk'>" + item.idPk + "</td>" +
                         "<td id='Scientific'>" + item.scientific + "</td>" +
                         "<td id='Common'>" + item.common + "</td>" +
+                        "<td><button class='btn-info btn-xs' name='btnEdit'>"  +
+                        "<span class='glyphicon glyphicon-pencil'></span></button>" +
+                        "<button class='btn-info btn-xs' name='btnDetail'>" +
+                        "<span class='glyphicon glyphicon-search'></span></button></td>" +
                         "</tr>";
                     $('#Table').append(rows);
                 }); //End of foreach Loop
@@ -53,4 +66,5 @@
 
         });
     });
+    
 </script>  
