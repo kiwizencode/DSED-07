@@ -22,9 +22,13 @@ namespace IMSWebApp.Controllers
 
         // GET: api/Species
         [HttpGet]
-        public IEnumerable<Species> GetSpecies()
+        //public IEnumerable<Species> GetSpecies()
+        //{
+        //    return _context.Species;
+        //}
+        public async Task<IEnumerable<Species>> GetSpecies()
         {
-            return _context.Species;
+            return await _context.Species.ToListAsync();
         }
 
         // GET: api/Species/5

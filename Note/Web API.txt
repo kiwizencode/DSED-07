@@ -8,3 +8,8 @@ Install-Package Microsoft.EntityFrameworkCore.Tools
 Install-Package Microsoft.EntityFrameworkCore.SqlServer
 
 Scaffold-DbContext "Data Source=(localdb)\ProjectsV13;Initial Catalog=IMSystem;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
+
+Web API Proxy
+https://reynders.co/introducing-webapiproxy-providing/
+
+http://www.codemag.com/article/1601031
