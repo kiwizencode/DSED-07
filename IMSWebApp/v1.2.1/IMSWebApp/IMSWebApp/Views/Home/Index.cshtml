@@ -5,13 +5,13 @@
 <!-- using the following uri as a template to build this page
     https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_temp_store&stacked=h
     -->
-    <div class="jumbotron">
-        <div class="container text-center">
-            <h1>Aquatic Import Site Management System</h1>
-            <p></p>
-            <p>ASP.NET Core 2 Web API Application</p>
-        </div>
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1>Aquatic Import Site Management System</h1>
+        <p></p>
+        <p>ASP.NET Core 2 Web API Application</p>
     </div>
+</div>
 <div class="row">
     <p></p>
 
@@ -21,7 +21,9 @@
             <div class="panel-body">
                 <button class="btn-info btn-block btn-lg">New Species</button>
                 <button class="btn-info btn-block btn-lg"
-                        onclick="location.href='@Url.Action("Supplier", "Shipment")'">Supplier</button>
+                        onclick="location.href='@Url.Action("Supplier", "Shipment")'">
+                    Supplier
+                </button>
                 <button class="btn-info btn-block btn-lg">Order</button>
                 <button class="btn-info btn-block btn-lg" disabled>Shipment</button>
                 <button class="btn-info btn-block btn-lg" disabled>Quarantine</button>
@@ -44,7 +46,9 @@
             <div class="panel-heading" style="text-align:center">System</div>
             <div class="panel-body">
                 <button class="btn-info btn-block btn-lg"
-                        onclick="location.href='@Url.Action("Species", "System")'">MPI Species List</button>
+                        onclick="location.href='@Url.Action("Species", "System")'">
+                    MPI Species List
+                </button>
                 <button class="btn-info btn-block btn-lg" disabled>Mortality Reason</button>
             </div>
         </div>
@@ -57,7 +61,7 @@
             </div>
         </div>
     </div>
-        @*
+    @*
 
             <div class="col-sm-4">
             <div class="panel panel-success">
@@ -67,5 +71,5 @@
                 </div>
             </div>
         </div>
-        *@
+    *@
 </div>
