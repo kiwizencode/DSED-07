@@ -8,4 +8,3 @@ C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\IMSWebApp\v1.2.1\IMSWebApp\IM
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\IMSWebApp\v1.2.1\IMSWebApp\IMSWebApp\bin\Debug\netcoreapp2.0\IMSWebApp.pdb
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\IMSWebApp\v1.2.1\IMSWebApp\IMSWebApp\obj\Debug\netcoreapp2.0\IMSWebApp.dll
 C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\IMSWebApp\v1.2.1\IMSWebApp\IMSWebApp\obj\Debug\netcoreapp2.0\IMSWebApp.pdb
-C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\IMSWebApp\v1.2.1\IMSWebApp\IMSWebApp\obj\Debug\netcoreapp2.0\IMSWebApp.csprojResolveAssemblyReference.cache
