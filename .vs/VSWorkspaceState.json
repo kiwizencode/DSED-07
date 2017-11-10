@@ -1,12 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\ImportData",
-    "\\IMSWebApp",
-    "\\IMSWebApp\\v1.2.1",
-    "\\IMSWebApp\\v1.2.1\\IMSWebApp",
-    "\\Note"
+    "\\IMSWebApp"
   ],
-  "SelectedNode": "\\IMSWebApp\\v1.2.1\\IMSWebApp\\IMSWebApp.sln",
   "PreviewInSolutionExplorer": false
 }
