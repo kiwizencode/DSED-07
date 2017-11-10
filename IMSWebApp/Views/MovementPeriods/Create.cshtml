@@ -1,37 +1,52 @@
 ﻿@model IMSWebApp.Models.MovementPeriod
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Quarantine Period";
 }
 
-<h2>Create</h2>
-
-<h4>MovementPeriod</h4>
-<hr />
+<br />
+<div class="panel panel-info">
+    <!-- Panel Heading -->
+    <div class="panel-heading">
+        <h2>
+            <span class='glyphicon glyphicon-plus'></span>
+            &nbsp;@ViewData["Title"]
+        </h2>
+    </div>
+</div>
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Text" class="control-label"></label>
-                <input asp-for="Text" class="form-control" />
-                <span asp-validation-for="Text" class="text-danger"></span>
+        <div class="panel">
+
+            <div class="panel-body">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Text" class="control-label"></label>
+                        <input asp-for="Text" class="form-control" />
+                        <span asp-validation-for="Text" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ClosedDate" class="control-label"></label>
+                        <input asp-for="ClosedDate" class="form-control" />
+                        <span asp-validation-for="ClosedDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-lg btn-success btn-block" />
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="ClosedDate" class="control-label"></label>
-                <input asp-for="ClosedDate" class="form-control" />
-                <span asp-validation-for="ClosedDate" class="text-danger"></span>
+            <div class="panel-footer">
+                <div>
+                    <a class="btn btn-primary btn-lg btn-block" asp-action="Index">Back to List</a>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </form>
+        </div>
+
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

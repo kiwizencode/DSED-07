@@ -12,6 +12,16 @@
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/lib/jquery-ui/themes/base/datepicker.css"/>
+        <link rel="stylesheet" href="~/lib/jquery-ui/themes/base/jquery-ui.min.css"/>
+        <link rel="stylesheet" href="~/lib/jquery-ui/themes/base/theme.css"/>
+
+        <script src="~/lib/jquery-ui/ui/core.js"></script>
+        <script src="~/lib/jquery-ui/ui/widgets/datepicker.js"></script>
+        <script src="~/js/DatePickerReady.js"></script> 
+
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/jquery-ui/jquery-ui.min.js"></script>
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -46,12 +56,12 @@
             font-size: 14pt;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        /*
         .btn-info {
             font-size: 12pt;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        */
         h2 {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
@@ -64,28 +74,29 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* 
+        /*
             Turning Links Into Buttons in CSS
             https://resource-centre.net/css3-tutorials/turning-links-into-buttons/
         */
-        a {
-            text-decoration: none;
-            color: black;
+
+
+        /* format the table heading and body */
+        .table > thead > tr > th {
+            vertical-align: middle;
+            text-align: center;
         }
-        a.button {
-            float: left;
-            background-color: #428bca;
-            border: 1px solid #660000;
-            border-radius: 5px;
-            color: white;
-            margin-right: 10px;
-            padding: 2px 5px 2px 5px;
+
+        /* https://stackoverflow.com/questions/27747072/vertical-align-in-bootstrap-table */
+        .table > tbody > tr > td {
+            vertical-align: middle;
+            text-align: center;
         }
+         
     </style>
 
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top alert-basic">
+    <nav class="navbar navbar-inverse navbar-fixed-top alert-success">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -94,7 +105,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand"><span style="color:white;font-size:18pt">DSED-07</span></a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand"><span style="color:black;font-size:18pt">DSED-07</span></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">

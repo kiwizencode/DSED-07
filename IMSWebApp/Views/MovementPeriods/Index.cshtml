@@ -3,16 +3,16 @@
 @{
     ViewData["Title"] = "Quarantine Period";
 }
-
+<br/>
 <!-- create a panel to hold other page elements -->
 <div class="panel panel-info">
     <!-- Panel Heading -->
     <div class="panel-heading">
         <h2>
-            <a class="button" asp-action="Create">
+            <a class="btn btn-primary btn-lg" asp-action="Create">
                 <span class="glyphicon glyphicon-plus"></span>
             </a>
-            @ViewData["Title"]
+            &nbsp;&nbsp;@ViewData["Title"]
         </h2>
     </div>
     <!-- Panel Body -->
@@ -53,13 +53,15 @@
                             @Html.DisplayFor(modelItem => item.ClosedFlag)
                         </td>
                         <td>
-                            <a class="button" asp-action="Edit" asp-route-id="@item.IdPk">
+                            <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.IdPk">
                                 <span class='glyphicon glyphicon-pencil'></span>
                             </a>
-                            <a class="button" asp-action="Details" asp-route-id="@item.IdPk">
-                                <span class='glyphicon glyphicon-search'></span>
-                            </a>
-                            <a class="button" asp-action="Delete" asp-route-id="@item.IdPk">
+                            @*                            
+                                <a class="btn btn-primary btn-sm" asp-action="Details" asp-route-id="@item.IdPk">
+                                    <span class='glyphicon glyphicon-search'></span>
+                                </a>*@
+
+                            <a class="btn btn-primary btn-sm" asp-action="Delete" asp-route-id="@item.IdPk">
                                 <span class='glyphicon glyphicon-trash'></span>
                             </a>
                         </td>
