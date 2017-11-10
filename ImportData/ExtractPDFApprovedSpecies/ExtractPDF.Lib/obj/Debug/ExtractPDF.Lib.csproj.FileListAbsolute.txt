@@ -1,6 +1,0 @@
-C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ExtractPDFApprovedSpecies\ExtractPDF.Lib\obj\Debug\ExtractPDF.Lib.csproj.CoreCompileInputs.cache
-C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ExtractPDFApprovedSpecies\ExtractPDF.Lib\bin\Debug\ExtractPDF.Lib.dll
-C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ExtractPDFApprovedSpecies\ExtractPDF.Lib\bin\Debug\ExtractPDF.Lib.pdb
-C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ExtractPDFApprovedSpecies\ExtractPDF.Lib\bin\Debug\itextsharp.dll
-C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ExtractPDFApprovedSpecies\ExtractPDF.Lib\obj\Debug\ExtractPDF.Lib.dll
-C:\Users\kiwizen\Desktop\kiwizen.code DSED\DSED-07\ImportData\ExtractPDFApprovedSpecies\ExtractPDF.Lib\obj\Debug\ExtractPDF.Lib.pdb
