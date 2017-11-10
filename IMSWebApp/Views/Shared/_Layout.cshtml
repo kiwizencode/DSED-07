@@ -32,7 +32,7 @@
         /* Remove the jumbotron's default bottom margin */
         .jumbotron {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin-bottom: 0;
+            margin-bottom: 20;
         }
 
         /* Add a gray background color and some padding to the footer
@@ -63,11 +63,29 @@
         th {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
+        /* 
+            Turning Links Into Buttons in CSS
+            https://resource-centre.net/css3-tutorials/turning-links-into-buttons/
+        */
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        a.button {
+            float: left;
+            background-color: #428bca;
+            border: 1px solid #660000;
+            border-radius: 5px;
+            color: white;
+            margin-right: 10px;
+            padding: 2px 5px 2px 5px;
+        }
     </style>
 
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top alert-success">
+    <nav class="navbar navbar-inverse navbar-fixed-top alert-basic">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -76,7 +94,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand"><span style="color:darkgreen;font-size:18pt">DSED-07</span></a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand"><span style="color:white;font-size:18pt">DSED-07</span></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -89,7 +107,7 @@
     </nav>
     <div class="container body-content">
         @RenderBody()
-        <hr />
+
         <footer>
             <p><span style="color:Black;font-size:10pt">&copy; 2017 - DSED-07 Assignment by <a href="mailto:kiwizen.code@hotmail.com">Keum-Hong, Lim</a></span></p>
         </footer>

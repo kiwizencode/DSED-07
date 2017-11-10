@@ -1,0 +1,71 @@
+﻿@model IEnumerable<IMSWebApp.Models.MovementPeriod>
+
+@{
+    ViewData["Title"] = "Quarantine Period";
+}
+
+<!-- create a panel to hold other page elements -->
+<div class="panel panel-info">
+    <!-- Panel Heading -->
+    <div class="panel-heading">
+        <h2>
+            <a class="button" asp-action="Create">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+            @ViewData["Title"]
+        </h2>
+    </div>
+    <!-- Panel Body -->
+    <div class="panel-body">
+
+        <table class="table table-bordered table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StartDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Text)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClosedDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClosedFlag)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.StartDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Text)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ClosedDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ClosedFlag)
+                        </td>
+                        <td>
+                            <a class="button" asp-action="Edit" asp-route-id="@item.IdPk">
+                                <span class='glyphicon glyphicon-pencil'></span>
+                            </a>
+                            <a class="button" asp-action="Details" asp-route-id="@item.IdPk">
+                                <span class='glyphicon glyphicon-search'></span>
+                            </a>
+                            <a class="button" asp-action="Delete" asp-route-id="@item.IdPk">
+                                <span class='glyphicon glyphicon-trash'></span>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
