@@ -9,7 +9,7 @@
     <!-- Panel Heading -->
     <div class="panel-heading">
         <h2>
-            <a class="btn btn-primary btn-lg" asp-action="Create">
+            <a class="btn btn-warning btn-lg" asp-action="Create">
                 <span class="glyphicon glyphicon-plus"></span>
             </a>
             &nbsp;&nbsp;@ViewData["Title"]
@@ -52,18 +52,21 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.ClosedFlag)
                         </td>
-                        <td>
-                            <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.IdPk">
-                                <span class='glyphicon glyphicon-pencil'></span>
-                            </a>
-                            @*                            
-                                <a class="btn btn-primary btn-sm" asp-action="Details" asp-route-id="@item.IdPk">
-                                    <span class='glyphicon glyphicon-search'></span>
-                                </a>*@
-
-                            <a class="btn btn-primary btn-sm" asp-action="Delete" asp-route-id="@item.IdPk">
-                                <span class='glyphicon glyphicon-trash'></span>
-                            </a>
+                        <!-- set the column to just fit contents-->
+                        <td style="width:1%;white-space:nowrap">
+                            <div>
+                                <a class="btn btn-success btn-sm" asp-action="Edit" asp-route-id="@item.IdPk">
+                                    <span class='glyphicon glyphicon-pencil'></span>
+                                </a>
+                                @*
+                <a class="btn btn-primary btn-sm" asp-action="Details" asp-route-id="@item.IdPk">
+                    <span class='glyphicon glyphicon-search'></span>
+                </a>
+                                *@
+                                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.IdPk">
+                                    <span class='glyphicon glyphicon-trash'></span>
+                                </a>
+                            </div>
                         </td>
                     </tr>
                 }

@@ -1,41 +1,65 @@
 ﻿@model IEnumerable<IMSWebApp.Models.TankBay>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Bay / Bank / Aisle";
 }
+<br/>
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h2>
+            <a class="btn btn-warning btn-lg" asp-action="Create">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+            &nbsp;&nbsp;@ViewData["Title"]
+        </h2>
+    </div>
+    <div class="panel-body">
+        <table class="table table-bordered table-striped table-condensed">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IdCode)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Text)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IdCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Text)
+                        </td>
+                        <!-- set the column to just fit contents-->
+                        <td style="width:1%;white-space:nowrap">
+                            <div>
+                                <a class="btn btn-success btn-sm" asp-action="Edit" asp-route-id="@item.IdPk">
+                                    <span class='glyphicon glyphicon-pencil'></span>
+                                </a>
+@*
+                                <a class="btn btn-primary btn-sm" asp-action="Details" asp-route-id="@item.IdPk">
+                                    <span class='glyphicon glyphicon-search'></span>
+                                </a>
+*@
+                                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.IdPk">
+                                    <span class='glyphicon glyphicon-trash'></span>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
 
-<h2>Index</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.IdCode)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Text)
-                </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdCode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Text)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdPk">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdPk">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdPk">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+
+

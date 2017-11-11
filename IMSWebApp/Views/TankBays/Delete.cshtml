@@ -1,33 +1,45 @@
 ﻿@model IMSWebApp.Models.TankBay
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Bay / Bank / Aisle";
 }
-
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>TankBay</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.IdCode)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.IdCode)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Text)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Text)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="IdPk" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+<br/>
+<div class="panel panel-info">
+    <!-- Panel Heading -->
+    <div class="panel-heading">
+        <h2>
+            <span class='glyphicon glyphicon-trash' style="color:#d9534f"></span>
+            &nbsp;@ViewData["Title"]
+        </h2>
+    </div>
+    <!-- Panel Body -->
+    <div class="panel-body">
+        <div>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.IdCode)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.IdCode)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Text)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Text)
+                </dd>
+            </dl>
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="IdPk" />
+                <input type="submit" value="Delete" class="btn btn-danger btn-lg btn-block" />
+                
+            </form>
+        </div>
+    </div>
+    <!-- Panel Footer -->
+    <div class="panel-footer">
+        <a class="btn btn-primary btn-lg btn-block" asp-action="Index">Back to List</a>
+    </div>
 </div>
+
+

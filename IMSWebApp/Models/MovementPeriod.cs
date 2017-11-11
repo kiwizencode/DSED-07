@@ -16,6 +16,7 @@ namespace IMSWebApp.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime StartDate { get; set; }
+        [Display(Name = "Comments")]
         public string Text { get; set; }
         [Display(Name = "End Date")]
         [DataType(DataType.Date)]
