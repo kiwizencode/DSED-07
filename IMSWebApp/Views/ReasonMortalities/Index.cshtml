@@ -1,0 +1,68 @@
+﻿@model IEnumerable<IMSWebApp.Models.ReasonMortality>
+
+@{
+    ViewData["Title"] = "Moartality Reason";
+}
+
+<!-- Create a panel to hold all elements in the page -->
+<div class="panel panel-info">
+    <!-- Panel Heading -->
+    <div class="panel-heading">
+        <h2>
+            <a class="btn btn-warning btn-lg" asp-action="Create">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+            &nbsp;&nbsp;@ViewData["Title"]
+        </h2>
+    </div>
+    <!-- Panel Body -->
+    <div class="panel-body">
+        <table class="table table-bordered table-striped table-condensed">
+            <thead>
+                <tr>
+@*
+                    <th>
+                        @Html.DisplayNameFor(model => model.IdCode)
+                    </th>
+*@
+                    <th>
+                        @Html.DisplayNameFor(model => model.Text)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.OrderBy(x => x.Text))
+                {
+                    <tr>
+@*
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IdCode)
+                        </td>
+*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Text)
+                        </td>
+                        <!-- set the column to just fit contents-->
+                        <td style="width:1%;white-space:nowrap">
+                            <div>
+                                <a class="btn btn-success btn-sm" asp-action="Edit" asp-route-id="@item.IdPk">
+                                    <span class='glyphicon glyphicon-pencil'></span>
+                                </a>
+@*
+                                <a class="btn btn-primary btn-sm" asp-action="Details" asp-route-id="@item.IdPk">
+                                    <span class='glyphicon glyphicon-search'></span>
+                                </a>
+*@
+                                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.IdPk">
+                                    <span class='glyphicon glyphicon-trash'></span>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

@@ -1,0 +1,30 @@
+﻿@model IMSWebApp.Models.ReasonMortality
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ReasonMortality</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Text)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Text)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdPk">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

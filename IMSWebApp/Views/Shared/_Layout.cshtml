@@ -97,17 +97,24 @@
 
 </head>
 <body>
+
     <nav class="navbar navbar-inverse navbar-fixed-top alert-success"
          id="nav_id">
         <div class="container">
             <div class="navbar-header">
+@*
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand"><span style="color:black;font-size:18pt">DSED-07</span></a>
+*@
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">
+                    <span style="color:black;font-size:14pt">
+                        DSED-07 Assignment
+                    </span>
+                </a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -119,11 +126,11 @@
         </div>
     </nav>
     <div class="container body-content">
-        <br />
+        <br />       
         @RenderBody()
 
         <footer id="footer_id">
-            <p><span style="color:Black;font-size:10pt">&copy; 2017 - DSED-07 Assignment by <a href="mailto:kiwizen.code@hotmail.com">Keum-Hong, Lim</a></span></p>
+            <p><span style="color:Black;font-size:12pt">&copy; 2017 DSED-07 Assignment by <a href="mailto:kiwizen.code@hotmail.com">Keum-Hong, Lim</a></span></p>
         </footer>
     </div>
 
