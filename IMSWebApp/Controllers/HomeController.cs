@@ -29,6 +29,13 @@ namespace IMSWebApp.Controllers
             return View();
         }
 
+        public IActionResult ApprovedSpecies()
+        {
+            ViewData["Message"] = "MPI Approved Species List";
+
+            return View();
+        }
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

@@ -24,7 +24,7 @@ namespace IMSWebApp.Controllers
         [HttpGet]
         public IEnumerable<MarineSpecies> GetMarineSpecies()
         {
-            return _context.MarineSpecies;
+            return _context.MarineSpecies.Where(x => x.Flag==true);
         }
 
         // GET: api/MPISpeciesAPI/5
