@@ -1,9 +1,9 @@
-﻿@model IEnumerable<IMSWebApp.Models.MovementPeriod>
+﻿@model IEnumerable<IMSWebApp.Models.Tank>
 
 @{
-    ViewData["Title"] = "Quarantine Period";
+    ViewData["Title"] = "Tanks";
 }
-<!-- create a panel to hold other page elements -->
+<!-- Create a panel to hold all elements in the page -->
 <div class="panel panel-info">
     <!-- Panel Heading -->
     <div class="panel-heading">
@@ -16,41 +16,55 @@
     </div>
     <!-- Panel Body -->
     <div class="panel-body">
-
         <table class="table table-bordered table-striped table-condensed">
             <thead>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.StartDate)
+                        @Html.DisplayNameFor(model => model.BayFkNavigation.IdCode)
                     </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IdCode)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Rfid)
+                    </th>
+                    <!-- Not requirement for the following fields to be displayed -->
+@*
                     <th>
                         @Html.DisplayNameFor(model => model.Text)
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.ClosedDate)
+                        @Html.DisplayNameFor(model => model.BayFkNavigation)
                     </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ClosedFlag)
-                    </th>
+*@
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model)
+                @foreach (var item in Model.OrderBy(x => x.BayFkNavigation.IdCode)
+                                           .OrderBy(x => x.IdCode))
                 {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.StartDate)
+                            @Html.DisplayFor(modelItem => item.BayFkNavigation.IdCode)
                         </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IdCode)
+                        </td>
+
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Rfid)
+                        </td>
+                        <!-- Hence the following fields in the row data are not required to be displayed -->
+@*
                         <td>
                             @Html.DisplayFor(modelItem => item.Text)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.ClosedDate)
+                            @Html.DisplayFor(modelItem => item.BayFkNavigation.IdCode)
                         </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ClosedFlag)
-                        </td>
+*@
                         <!-- set the column to just fit contents-->
                         <td style="width:1%;white-space:nowrap">
                             <div>
@@ -58,9 +72,9 @@
                                     <span class='glyphicon glyphicon-pencil'></span>
                                 </a>
                                 @*
-                <a class="btn btn-primary btn-sm" asp-action="Details" asp-route-id="@item.IdPk">
-                    <span class='glyphicon glyphicon-search'></span>
-                </a>
+                                <a class="btn btn-primary btn-sm" asp-action="Details" asp-route-id="@item.IdPk">
+                                    <span class='glyphicon glyphicon-search'></span>
+                                </a>
                                 *@
                                 <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.IdPk">
                                     <span class='glyphicon glyphicon-trash'></span>
@@ -73,3 +87,4 @@
         </table>
     </div>
 </div>
+

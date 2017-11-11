@@ -12,7 +12,7 @@ namespace IMSWebApp.Models
         }
 
         public int IdPk { get; set; }
-        [Display(Name = "Id Number")]
+        [Display(Name = "Bay ID")]
         public string IdCode { get; set; }
         [Display(Name = "Description")]
         public string Text { get; set; }

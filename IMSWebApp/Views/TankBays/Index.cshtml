@@ -3,16 +3,18 @@
 @{
     ViewData["Title"] = "Bay / Bank / Aisle";
 }
-<br/>
+<!-- Create a panel to hold all elements in the page -->
 <div class="panel panel-info">
+    <!-- Panel Heading -->
     <div class="panel-heading">
         <h2>
             <a class="btn btn-warning btn-lg" asp-action="Create">
                 <span class="glyphicon glyphicon-plus"></span>
             </a>
-            &nbsp;&nbsp;@ViewData["Title"]
+            &nbsp;@ViewData["Title"]
         </h2>
     </div>
+    <!-- Panel Body -->
     <div class="panel-body">
         <table class="table table-bordered table-striped table-condensed">
             <thead>

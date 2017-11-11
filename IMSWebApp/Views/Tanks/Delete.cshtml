@@ -1,8 +1,9 @@
-﻿@model IMSWebApp.Models.TankBay
+﻿@model IMSWebApp.Models.Tank
 
 @{
-    ViewData["Title"] = "Bay / Bank / Aisle";
+    ViewData["Title"] = "Tanks";
 }
+
 <!-- Create a panel to hold all elements in the page -->
 <div class="panel panel-info">
     <!-- Panel Heading -->
@@ -28,18 +29,30 @@
                 <dd>
                     @Html.DisplayFor(model => model.Text)
                 </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Rfid)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Rfid)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.BayFkNavigation)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.BayFkNavigation.IdCode)
+                </dd>
             </dl>
+
             <form asp-action="Delete">
                 <input type="hidden" asp-for="IdPk" />
                 <input type="submit" value="Delete" class="btn btn-danger btn-lg btn-block" />
-                
             </form>
         </div>
+
     </div>
     <!-- Panel Footer -->
     <div class="panel-footer">
         <a class="btn btn-primary btn-lg btn-block" asp-action="Index">Back to List</a>
     </div>
 </div>
-
 

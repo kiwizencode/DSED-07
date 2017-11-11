@@ -1,9 +1,9 @@
-﻿@model IMSWebApp.Models.MovementPeriod
+﻿@model IMSWebApp.Models.Tank
 
 @{
-    ViewData["Title"] = "Quarantine Period";
+    ViewData["Title"] = "Tanks";
 }
-
+<!-- Create a panel to hold all elements in the page -->
 <div class="panel panel-info">
     <!-- Panel Heading -->
     <div class="panel-heading">
@@ -20,9 +20,14 @@
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <input type="hidden" asp-for="IdPk" />
                     <div class="form-group">
-                        <label asp-for="StartDate" class="control-label"></label>
-                        <input asp-for="StartDate" class="form-control" />
-                        <span asp-validation-for="StartDate" class="text-danger"></span>
+                        <label asp-for="BayFk" class="control-label"></label>
+                        <select asp-for="BayFk" class="form-control" asp-items="ViewBag.BayFk"></select>
+                        <span asp-validation-for="BayFk" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="IdCode" class="control-label"></label>
+                        <input asp-for="IdCode" class="form-control" />
+                        <span asp-validation-for="IdCode" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Text" class="control-label"></label>
@@ -30,14 +35,9 @@
                         <span asp-validation-for="Text" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="ClosedDate" class="control-label"></label>
-                        <input asp-for="ClosedDate" class="form-control" />
-                        <span asp-validation-for="ClosedDate" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="ClosedFlag" class="control-label"></label>
-                        <input asp-for="ClosedFlag" class="form-control" />
-                        <span asp-validation-for="ClosedFlag" class="text-danger"></span>
+                        <label asp-for="Rfid" class="control-label"></label>
+                        <input asp-for="Rfid" class="form-control" />
+                        <span asp-validation-for="Rfid" class="text-danger"></span>
                     </div>
                     <div class="form-group" style="margin-bottom:0!important;">
                         <input type="submit" value="Save" class="btn btn-lg btn-success btn-block" />
@@ -54,13 +54,6 @@
     </div>
 </div>
 
-
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-
-
 }
-
-
-
