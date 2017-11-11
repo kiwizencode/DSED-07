@@ -1,0 +1,68 @@
+﻿@model IMSWebApp.Models.TankLog
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>TankLog</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PeriodFk" class="control-label"></label>
+                <select asp-for="PeriodFk" class ="form-control" asp-items="ViewBag.PeriodFk"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TankFk" class="control-label"></label>
+                <select asp-for="TankFk" class ="form-control" asp-items="ViewBag.TankFk"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpeciesFk" class="control-label"></label>
+                <select asp-for="SpeciesFk" class ="form-control" asp-items="ViewBag.SpeciesFk"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpeciesText" class="control-label"></label>
+                <input asp-for="SpeciesText" class="form-control" />
+                <span asp-validation-for="SpeciesText" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Qty" class="control-label"></label>
+                <input asp-for="Qty" class="form-control" />
+                <span asp-validation-for="Qty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comment" class="control-label"></label>
+                <input asp-for="Comment" class="form-control" />
+                <span asp-validation-for="Comment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StuffFk" class="control-label"></label>
+                <select asp-for="StuffFk" class ="form-control" asp-items="ViewBag.StuffFk"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderFk" class="control-label"></label>
+                <input asp-for="OrderFk" class="form-control" />
+                <span asp-validation-for="OrderFk" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SizeFk" class="control-label"></label>
+                <select asp-for="SizeFk" class ="form-control" asp-items="ViewBag.SizeFk"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
