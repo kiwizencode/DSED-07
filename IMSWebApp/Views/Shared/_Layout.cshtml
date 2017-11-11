@@ -4,7 +4,7 @@
     using the following uri as a template to build the assignment html page
         https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_temp_store&stacked=h
 *@
-<head>
+<head id="header_id">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]-DSED-07</title>
@@ -97,7 +97,8 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top alert-success">
+    <nav class="navbar navbar-inverse navbar-fixed-top alert-success"
+         id="nav_id">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -121,7 +122,7 @@
         <br />
         @RenderBody()
 
-        <footer>
+        <footer id="footer_id">
             <p><span style="color:Black;font-size:10pt">&copy; 2017 - DSED-07 Assignment by <a href="mailto:kiwizen.code@hotmail.com">Keum-Hong, Lim</a></span></p>
         </footer>
     </div>
