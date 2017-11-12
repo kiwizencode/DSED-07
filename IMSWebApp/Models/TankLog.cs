@@ -23,6 +23,7 @@ namespace IMSWebApp.Models
         [Display(Name = "Description 2")]
         public string SpeciesText2 { get; set; }
         public int Qty { get; set; }
+        [DisplayFormat(NullDisplayText = "N/A")]
         public string Comment { get; set; }
         [Display(Name = "Stuff")]
         public int StuffFk { get; set; }

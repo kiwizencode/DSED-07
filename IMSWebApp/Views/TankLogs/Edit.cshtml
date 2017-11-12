@@ -1,77 +1,90 @@
 ﻿@model IMSWebApp.Models.TankLog
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Tank Logs Registry";
 }
 
-<h2>Edit</h2>
-
-<h4>TankLog</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="IdPk" />
-            <div class="form-group">
-                <label asp-for="PeriodFk" class="control-label"></label>
-                <select asp-for="PeriodFk" class="form-control" asp-items="ViewBag.PeriodFk"></select>
-                <span asp-validation-for="PeriodFk" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TankFk" class="control-label"></label>
-                <select asp-for="TankFk" class="form-control" asp-items="ViewBag.TankFk"></select>
-                <span asp-validation-for="TankFk" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SpeciesFk" class="control-label"></label>
-                <select asp-for="SpeciesFk" class="form-control" asp-items="ViewBag.SpeciesFk"></select>
-                <span asp-validation-for="SpeciesFk" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SpeciesText" class="control-label"></label>
-                <input asp-for="SpeciesText" class="form-control" />
-                <span asp-validation-for="SpeciesText" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SpeciesText2" class="control-label"></label>
-                <input asp-for="SpeciesText2" class="form-control" />
-                <span asp-validation-for="SpeciesText2" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Qty" class="control-label"></label>
-                <input asp-for="Qty" class="form-control" />
-                <span asp-validation-for="Qty" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Comment" class="control-label"></label>
-                <input asp-for="Comment" class="form-control" />
-                <span asp-validation-for="Comment" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="StuffFk" class="control-label"></label>
-                <select asp-for="StuffFk" class="form-control" asp-items="ViewBag.StuffFk"></select>
-                <span asp-validation-for="StuffFk" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="OrderFk" class="control-label"></label>
-                <input asp-for="OrderFk" class="form-control" />
-                <span asp-validation-for="OrderFk" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SizeFk" class="control-label"></label>
-                <select asp-for="SizeFk" class="form-control" asp-items="ViewBag.SizeFk"></select>
-                <span asp-validation-for="SizeFk" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </form>
+<!-- Create a panel to hold all elements in the page -->
+<div class="panel panel-info">
+    <!-- Panel Heading -->
+    <div class="panel-heading">
+        <h2>
+            <span class='glyphicon glyphicon-pencil' style="color:#5cb85c"></span>
+            &nbsp;@ViewData["Title"]
+        </h2>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
+    <!-- Panel Body -->
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="IdPk" />
+                    <div class="form-group">
+                        <label asp-for="PeriodFk" class="control-label"></label>
+                        <select asp-for="PeriodFk" class="form-control" asp-items="ViewBag.PeriodFk"></select>
+                        <span asp-validation-for="PeriodFk" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TankFk" class="control-label"></label>
+                        <select asp-for="TankFk" class="form-control" asp-items="ViewBag.TankFk"></select>
+                        <span asp-validation-for="TankFk" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="SpeciesFk" class="control-label"></label>
+                        <select asp-for="SpeciesFk" class="form-control" asp-items="ViewBag.SpeciesFk"></select>
+                        <span asp-validation-for="SpeciesFk" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="SpeciesText" class="control-label"></label>
+                        <input asp-for="SpeciesText" class="form-control" />
+                        <span asp-validation-for="SpeciesText" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="SpeciesText2" class="control-label"></label>
+                        <input asp-for="SpeciesText2" class="form-control" />
+                        <span asp-validation-for="SpeciesText2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="SizeFk" class="control-label"></label>
+                        <select asp-for="SizeFk" class="form-control" asp-items="ViewBag.SizeFk"></select>
+                        <span asp-validation-for="SizeFk" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Qty" class="control-label"></label>
+                        <input asp-for="Qty" class="form-control" />
+                        <span asp-validation-for="Qty" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Comment" class="control-label"></label>
+                        <input asp-for="Comment" class="form-control" />
+                        <span asp-validation-for="Comment" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="StuffFk" class="control-label"></label>
+                        <select asp-for="StuffFk" class="form-control" asp-items="ViewBag.StuffFk"></select>
+                        <span asp-validation-for="StuffFk" class="text-danger"></span>
+                    </div>
+@*
+                    <div class="form-group">
+                        <label asp-for="OrderFk" class="control-label"></label>
+                        <input asp-for="OrderFk" class="form-control" />
+                        <span asp-validation-for="OrderFk" class="text-danger"></span>
+                    </div>
+*@
+                    <div class="form-group" style="margin-bottom:0!important;">
+                        <input type="submit" value="Save" class="btn btn-lg btn-success btn-block" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Panel Footer -->
+    <div class="panel-footer">
+        <div>
+            <a class="btn btn-primary btn-lg btn-block" asp-action="Index">Back to List</a>
+        </div>
+    </div>
 </div>
 
 @section Scripts {
