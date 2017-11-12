@@ -20,7 +20,9 @@ namespace IMSWebApp.Models
         public string Text { get; set; }
         [Display(Name = "End Date")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", 
+                        ApplyFormatInEditMode = true,
+                        NullDisplayText = "N/A")]
         public DateTime? ClosedDate { get; set; }
         [Display(Name = "Closed Flag")]
         public bool ClosedFlag { get; set; } = false;

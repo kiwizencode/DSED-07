@@ -14,6 +14,7 @@ namespace IMSWebApp.Models
         public int IdPk { get; set; }
         [Display(Name = "Date")]
         public int? PeriodFk { get; set; }
+        [Display(Name = "Tank ID")]
         public int TankFk { get; set; }
         [Display(Name = "Species")]
         public int? SpeciesFk { get; set; }

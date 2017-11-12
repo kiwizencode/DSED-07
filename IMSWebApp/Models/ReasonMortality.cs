@@ -13,6 +13,7 @@ namespace IMSWebApp.Models
 
         public int IdPk { get; set; }
         [Display(Name = "Code")]
+        [DisplayFormat(NullDisplayText = "N/A")]
         public string IdCode { get; set; }
         [Display(Name = "Reason")]
         public string Text { get; set; }

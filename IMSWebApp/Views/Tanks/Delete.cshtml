@@ -4,6 +4,21 @@
     ViewData["Title"] = "Tanks";
 }
 
+<!-- Create style that is similiar to Create/Edit Menu -->
+<style>
+    dt {
+        padding-top: 12px;
+        padding-bottom: 8px;
+    }
+
+    dd {
+        border-radius: 5px;
+        border: 1px solid #bbb;
+        border-top: 3px solid #ddd;
+        padding: 5px 0px 5px 10px;
+    }
+</style>
+
 <!-- Create a panel to hold all elements in the page -->
 <div class="panel panel-info">
     <!-- Panel Heading -->
@@ -16,7 +31,7 @@
     <!-- Panel Body -->
     <div class="panel-body">
         <div>
-            <dl class="dl-horizontal">
+            <dl>
                 <dt>
                     @Html.DisplayNameFor(model => model.IdCode)
                 </dt>
