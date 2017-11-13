@@ -39,6 +39,22 @@
                     @Html.DisplayFor(model => model.LogDate)
                 </dd>
                 <dt>
+                    @Html.DisplayNameFor(model => model.LogFkNavigation)
+                </dt>
+                <dd>
+                    @* Html.DisplayFor(model => model.LogFkNavigation.IdPk) *@
+                    @* 
+                        Merge two data in @Html.DisplayFor in ASP.Net MVC
+                        https://stackoverflow.com/questions/42809731/merge-two-data-in-html-displayfor-in-asp-net-mvc    
+                    *@
+                    @{ 
+                        var text = Model.LogFkNavigation.TankFkNavigation.IdCode +
+                                    " " + Model.LogFkNavigation.SpeciesFkNavigation.Scientific +
+                                    " [Qty:" + Model.LogFkNavigation.Qty + "]";
+                        @Html.DisplayFor(model => text)
+                    }
+                </dd>
+                <dt>
                     @Html.DisplayNameFor(model => model.Qty)
                 </dt>
                 <dd>
@@ -50,12 +66,7 @@
                 <dd>
                     @Html.DisplayFor(model => model.Comment)
                 </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.LogFkNavigation)
-                </dt>
-                <dd>
-                    @Html.DisplayFor(model => model.LogFkNavigation.IdPk)
-                </dd>
+
                 <dt>
                     @Html.DisplayNameFor(model => model.ReasonFkNavigation)
                 </dt>

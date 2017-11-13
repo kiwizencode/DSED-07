@@ -23,7 +23,7 @@ namespace IMSWebApp.Controllers
         {
             var fishinaboxContext = _context.TankLogDaily.AsNoTracking().Include(t => t.LogFkNavigation).Include(t => t.ReasonFkNavigation).Include(t => t.StuffFkNavigation)
                                                        .Include(t => t.LogFkNavigation.TankFkNavigation)
-                                                       .Include(t => t.LogFkNavigation.SpeciesFkNavigation );
+                                                       .Include(t => t.LogFkNavigation.SpeciesFkNavigation); 
             return View(await fishinaboxContext.ToListAsync());
         }
 
@@ -37,8 +37,11 @@ namespace IMSWebApp.Controllers
 
             var tankLogDaily = await _context.TankLogDaily
                 .Include(t => t.LogFkNavigation)
+                .Include(t => t.LogFkNavigation.TankFkNavigation)
+                .Include(t => t.LogFkNavigation.SpeciesFkNavigation)
                 .Include(t => t.ReasonFkNavigation)
                 .Include(t => t.StuffFkNavigation)
+                .AsNoTracking()
                 .SingleOrDefaultAsync(m => m.IdPk == id);
             if (tankLogDaily == null)
             {
@@ -55,19 +58,20 @@ namespace IMSWebApp.Controllers
 
             /* need to display multiple field information on the dropdownlist
                  so that user can pick the right tank log record */
-            ViewData["LogFk"] = new SelectList( 
-                ( from x in _context.TankLog
-                  select new
-                  {
-                      IdPk = x.IdPk,
-                      Text = x.TankFkNavigation.IdCode + " " + // Tank Code ID
-                             x.SpeciesFkNavigation.Scientific + // Species 
-                             " [Qty:" + x.Qty + "]" // Quantity
-                  }
-                 ),"IdPk", "Text");
+            //ViewData["LogFk"] = new SelectList( 
+            //    ( from x in _context.TankLog
+            //      select new
+            //      {
+            //          IdPk = x.IdPk,
+            //          Text = x.TankFkNavigation.IdCode + " " + // Tank Code ID
+            //                 x.SpeciesFkNavigation.Scientific + // Species 
+            //                 " [Qty:" + x.Qty + "]" // Quantity
+            //      }
+            //     ),"IdPk", "Text");
 
-            ViewData["ReasonFk"] = new SelectList(_context.ReasonMortality, "IdPk", "Text");
-            ViewData["StuffFk"] = new SelectList(_context.SysStuff, "IdPk", "IdCode");
+            //ViewData["ReasonFk"] = new SelectList(_context.ReasonMortality, "IdPk", "Text");
+            //ViewData["StuffFk"] = new SelectList(_context.SysStuff, "IdPk", "IdCode");
+            initialiseViewData();
             return View();
         }
 
@@ -89,19 +93,20 @@ namespace IMSWebApp.Controllers
 
             /* need to display multiple field information on the dropdownlist
                  so that user can pick the right tank log record */
-            ViewData["LogFk"] = new SelectList(
-                (from x in _context.TankLog
-                 select new
-                 {
-                     IdPk = x.IdPk,
-                     Text = x.TankFkNavigation.IdCode + " " + // Tank Code ID
-                            x.SpeciesFkNavigation.Scientific + // Species 
-                            " [Qty:" + x.Qty + "]" // Quantity
-                 }
-                 ), "IdPk", "Text", tankLogDaily.LogFk);
+            //ViewData["LogFk"] = new SelectList(
+            //    (from x in _context.TankLog
+            //     select new
+            //     {
+            //         IdPk = x.IdPk,
+            //         Text = x.TankFkNavigation.IdCode + " " + // Tank Code ID
+            //                x.SpeciesFkNavigation.Scientific + // Species 
+            //                " [Qty:" + x.Qty + "]" // Quantity
+            //     }
+            //     ), "IdPk", "Text", tankLogDaily.LogFk);
 
-            ViewData["ReasonFk"] = new SelectList(_context.ReasonMortality, "IdPk", "Text", tankLogDaily.ReasonFk);
-            ViewData["StuffFk"] = new SelectList(_context.SysStuff, "IdPk", "IdCode", tankLogDaily.StuffFk);
+            //ViewData["ReasonFk"] = new SelectList(_context.ReasonMortality, "IdPk", "Text", tankLogDaily.ReasonFk);
+            //ViewData["StuffFk"] = new SelectList(_context.SysStuff, "IdPk", "IdCode", tankLogDaily.StuffFk);
+            initialiseViewData(tankLogDaily);
             return View(tankLogDaily);
         }
 
@@ -122,19 +127,20 @@ namespace IMSWebApp.Controllers
 
             /* need to display multiple field information on the dropdownlist
                  so that user can pick the right tank log record */
-            ViewData["LogFk"] = new SelectList(
-                (from x in _context.TankLog
-                 select new
-                 {
-                     IdPk = x.IdPk,
-                     Text = x.TankFkNavigation.IdCode + " " + // Tank Code ID
-                            x.SpeciesFkNavigation.Scientific + // Species 
-                            " [Qty:" + x.Qty + "]" // Quantity
-                 }
-                 ), "IdPk", "Text", tankLogDaily.LogFk);
+            //ViewData["LogFk"] = new SelectList(
+            //    (from x in _context.TankLog
+            //     select new
+            //     {
+            //         IdPk = x.IdPk,
+            //         Text = x.TankFkNavigation.IdCode + " " + // Tank Code ID
+            //                x.SpeciesFkNavigation.Scientific + // Species 
+            //                " [Qty:" + x.Qty + "]" // Quantity
+            //     }
+            //     ), "IdPk", "Text", tankLogDaily.LogFk);
 
-            ViewData["ReasonFk"] = new SelectList(_context.ReasonMortality, "IdPk", "Text", tankLogDaily.ReasonFk);
-            ViewData["StuffFk"] = new SelectList(_context.SysStuff, "IdPk", "IdCode", tankLogDaily.StuffFk);
+            //ViewData["ReasonFk"] = new SelectList(_context.ReasonMortality, "IdPk", "Text", tankLogDaily.ReasonFk);
+            //ViewData["StuffFk"] = new SelectList(_context.SysStuff, "IdPk", "IdCode", tankLogDaily.StuffFk);
+            initialiseViewData(tankLogDaily);
             return View(tankLogDaily);
         }
 
@@ -174,19 +180,20 @@ namespace IMSWebApp.Controllers
 
             /* need to display multiple field information on the dropdownlist
                  so that user can pick the right tank log record */
-            ViewData["LogFk"] = new SelectList(
-                (from x in _context.TankLog
-                 select new
-                 {
-                     IdPk = x.IdPk,
-                     Text = x.TankFkNavigation.IdCode + " " + // Tank Code ID
-                            x.SpeciesFkNavigation.Scientific + // Species 
-                            " [Qty:" + x.Qty + "]" // Quantity
-                 }
-                 ), "IdPk", "Text", tankLogDaily.LogFk);
+            //ViewData["LogFk"] = new SelectList(
+            //    (from x in _context.TankLog
+            //     select new
+            //     {
+            //         IdPk = x.IdPk,
+            //         Text = x.TankFkNavigation.IdCode + " " + // Tank Code ID
+            //                x.SpeciesFkNavigation.Scientific + // Species 
+            //                " [Qty:" + x.Qty + "]" // Quantity
+            //     }
+            //     ), "IdPk", "Text", tankLogDaily.LogFk);
 
-            ViewData["ReasonFk"] = new SelectList(_context.ReasonMortality, "IdPk", "Text", tankLogDaily.ReasonFk);
-            ViewData["StuffFk"] = new SelectList(_context.SysStuff, "IdPk", "IdCode", tankLogDaily.StuffFk);
+            //ViewData["ReasonFk"] = new SelectList(_context.ReasonMortality, "IdPk", "Text", tankLogDaily.ReasonFk);
+            //ViewData["StuffFk"] = new SelectList(_context.SysStuff, "IdPk", "IdCode", tankLogDaily.StuffFk);
+            initialiseViewData(tankLogDaily);
             return View(tankLogDaily);
         }
 
@@ -200,8 +207,11 @@ namespace IMSWebApp.Controllers
 
             var tankLogDaily = await _context.TankLogDaily
                 .Include(t => t.LogFkNavigation)
+                .Include(t => t.LogFkNavigation.TankFkNavigation)
+                .Include(t => t.LogFkNavigation.SpeciesFkNavigation)
                 .Include(t => t.ReasonFkNavigation)
                 .Include(t => t.StuffFkNavigation)
+                .AsNoTracking()
                 .SingleOrDefaultAsync(m => m.IdPk == id);
             if (tankLogDaily == null)
             {
@@ -225,6 +235,49 @@ namespace IMSWebApp.Controllers
         private bool TankLogDailyExists(int id)
         {
             return _context.TankLogDaily.Any(e => e.IdPk == id);
+        }
+        /* 
+         I following the uri 
+         https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/update-related-data
+         as an example for my following way of coding */
+        private void initialiseViewData([Bind("IdPk,LogDate,LogFk,ReasonFk,Qty,Comment,StuffFk")] TankLogDaily tankLogDaily = null)
+        {
+            if (tankLogDaily != null)
+            {
+                /* need to display multiple field information on the dropdownlist
+                     so that user can pick the right tank log record */
+                ViewData["LogFk"] = new SelectList(
+                    (from x in _context.TankLog
+                     select new
+                     {
+                         IdPk = x.IdPk,
+                         Text = x.TankFkNavigation.IdCode + " " + // Tank Code ID
+                                x.SpeciesFkNavigation.Scientific + // Species 
+                                " [Qty:" + x.Qty + "]" // Quantity
+                 }
+                     ), "IdPk", "Text", tankLogDaily.LogFk);
+
+                ViewData["ReasonFk"] = new SelectList(_context.ReasonMortality, "IdPk", "Text", tankLogDaily.ReasonFk);
+                ViewData["StuffFk"] = new SelectList(_context.SysStuff, "IdPk", "IdCode", tankLogDaily.StuffFk);
+            }
+            else
+            {
+                /* need to display multiple field information on the dropdownlist
+                     so that user can pick the right tank log record */
+                ViewData["LogFk"] = new SelectList(
+                    (from x in _context.TankLog
+                     select new
+                     {
+                         IdPk = x.IdPk,
+                         Text = x.TankFkNavigation.IdCode + " " + // Tank Code ID
+                            x.SpeciesFkNavigation.Scientific + // Species 
+                            " [Qty:" + x.Qty + "]" // Quantity
+                 }
+                     ), "IdPk", "Text");
+
+                ViewData["ReasonFk"] = new SelectList(_context.ReasonMortality, "IdPk", "Text");
+                ViewData["StuffFk"] = new SelectList(_context.SysStuff, "IdPk", "IdCode");
+            }
         }
     }
 }
