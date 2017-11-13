@@ -10,7 +10,7 @@ namespace IMSWebApp.Models
         {
             TankLogDaily = new HashSet<TankLogDaily>();
         }
-
+        
         public int IdPk { get; set; }
         [Display(Name = "Date")]
         public int? PeriodFk { get; set; }

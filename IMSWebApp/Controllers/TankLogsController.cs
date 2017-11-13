@@ -52,11 +52,25 @@ namespace IMSWebApp.Controllers
         // GET: TankLogs/Create
         public IActionResult Create()
         {
-            ViewData["PeriodFk"] = new SelectList(_context.MovementPeriod, "IdPk", "IdPk");
-            ViewData["SizeFk"] = new SelectList(_context.RecordPetSize, "IdPk", "Description");
-            ViewData["SpeciesFk"] = new SelectList(_context.MarineSpecies.AsNoTracking(), "IdPk", "Scientific");
-            ViewData["StuffFk"] = new SelectList(_context.SysStuff, "IdPk", "IdCode");
-            ViewData["TankFk"] = new SelectList(_context.Tank, "IdPk", "IdCode");
+            //ViewData["PeriodFk"] = new SelectList(_context.MovementPeriod, "IdPk", "StartDate");
+
+            /* need to change the date format to be consistent with the way
+               other page display date field, also add additional information to the dropdownlist */
+            //ViewData["PeriodFk"] = new SelectList(
+            //    (from x in _context.MovementPeriod
+            //     select new
+            //     {
+            //         IdPk = x.IdPk,
+            //         Text = x.StartDate.ToString("yyyy-MM-dd") +
+            //               " " + x.Text 
+            //      }
+            //    ), 
+            //    "IdPk", "Text");
+            //ViewData["SizeFk"] = new SelectList(_context.RecordPetSize, "IdPk", "Description");
+            //ViewData["SpeciesFk"] = new SelectList(_context.MarineSpecies.AsNoTracking(), "IdPk", "Scientific");
+            //ViewData["StuffFk"] = new SelectList(_context.SysStuff, "IdPk", "IdCode");
+            //ViewData["TankFk"] = new SelectList(_context.Tank, "IdPk", "IdCode");
+            initialiseViewData();
             return View();
         }
 
@@ -73,11 +87,12 @@ namespace IMSWebApp.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PeriodFk"] = new SelectList(_context.MovementPeriod, "IdPk", "IdPk", tankLog.PeriodFk);
-            ViewData["SizeFk"] = new SelectList(_context.RecordPetSize, "IdPk", "Description", tankLog.SizeFk);
-            ViewData["SpeciesFk"] = new SelectList(_context.MarineSpecies.AsNoTracking(), "IdPk", "Scientific", tankLog.SpeciesFk);
-            ViewData["StuffFk"] = new SelectList(_context.SysStuff, "IdPk", "IdCode", tankLog.StuffFk);
-            ViewData["TankFk"] = new SelectList(_context.Tank, "IdPk", "IdCode", tankLog.TankFk);
+            //ViewData["PeriodFk"] = new SelectList(_context.MovementPeriod, "IdPk", "StartDate", tankLog.PeriodFk);
+            //ViewData["SizeFk"] = new SelectList(_context.RecordPetSize, "IdPk", "Description", tankLog.SizeFk);
+            //ViewData["SpeciesFk"] = new SelectList(_context.MarineSpecies.AsNoTracking(), "IdPk", "Scientific", tankLog.SpeciesFk);
+            //ViewData["StuffFk"] = new SelectList(_context.SysStuff, "IdPk", "IdCode", tankLog.StuffFk);
+            //ViewData["TankFk"] = new SelectList(_context.Tank, "IdPk", "IdCode", tankLog.TankFk);
+            initialiseViewData(tankLog);
             return View(tankLog);
         }
 
@@ -94,11 +109,12 @@ namespace IMSWebApp.Controllers
             {
                 return NotFound();
             }
-            ViewData["PeriodFk"] = new SelectList(_context.MovementPeriod, "IdPk", "IdPk", tankLog.PeriodFk);
-            ViewData["SizeFk"] = new SelectList(_context.RecordPetSize, "IdPk", "Description", tankLog.SizeFk);
-            ViewData["SpeciesFk"] = new SelectList(_context.MarineSpecies.AsNoTracking(), "IdPk", "Scientific", tankLog.SpeciesFk);
-            ViewData["StuffFk"] = new SelectList(_context.SysStuff, "IdPk", "IdCode", tankLog.StuffFk);
-            ViewData["TankFk"] = new SelectList(_context.Tank, "IdPk", "IdCode", tankLog.TankFk);
+            //ViewData["PeriodFk"] = new SelectList(_context.MovementPeriod, "IdPk", "IdPk", tankLog.PeriodFk);
+            //ViewData["SizeFk"] = new SelectList(_context.RecordPetSize, "IdPk", "Description", tankLog.SizeFk);
+            //ViewData["SpeciesFk"] = new SelectList(_context.MarineSpecies.AsNoTracking(), "IdPk", "Scientific", tankLog.SpeciesFk);
+            //ViewData["StuffFk"] = new SelectList(_context.SysStuff, "IdPk", "IdCode", tankLog.StuffFk);
+            //ViewData["TankFk"] = new SelectList(_context.Tank, "IdPk", "IdCode", tankLog.TankFk);
+            initialiseViewData(tankLog);
             return View(tankLog);
         }
 
@@ -134,11 +150,12 @@ namespace IMSWebApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PeriodFk"] = new SelectList(_context.MovementPeriod, "IdPk", "IdPk", tankLog.PeriodFk);
-            ViewData["SizeFk"] = new SelectList(_context.RecordPetSize, "IdPk", "Description", tankLog.SizeFk);
-            ViewData["SpeciesFk"] = new SelectList(_context.MarineSpecies.AsNoTracking(), "IdPk", "Scientific", tankLog.SpeciesFk);
-            ViewData["StuffFk"] = new SelectList(_context.SysStuff, "IdPk", "IdCode", tankLog.StuffFk);
-            ViewData["TankFk"] = new SelectList(_context.Tank, "IdPk", "IdCode", tankLog.TankFk);
+            //ViewData["PeriodFk"] = new SelectList(_context.MovementPeriod, "IdPk", "IdPk", tankLog.PeriodFk);
+            //ViewData["SizeFk"] = new SelectList(_context.RecordPetSize, "IdPk", "Description", tankLog.SizeFk);
+            //ViewData["SpeciesFk"] = new SelectList(_context.MarineSpecies.AsNoTracking(), "IdPk", "Scientific", tankLog.SpeciesFk);
+            //ViewData["StuffFk"] = new SelectList(_context.SysStuff, "IdPk", "IdCode", tankLog.StuffFk);
+            //ViewData["TankFk"] = new SelectList(_context.Tank, "IdPk", "IdCode", tankLog.TankFk);
+            initialiseViewData(tankLog);
             return View(tankLog);
         }
 
@@ -180,6 +197,52 @@ namespace IMSWebApp.Controllers
         private bool TankLogExists(int id)
         {
             return _context.TankLog.AsNoTracking().Any(e => e.IdPk == id);
+        }
+
+        /* 
+         I following the uri 
+         https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/update-related-data
+         as an example for my following way of coding */
+        private void initialiseViewData([Bind("IdPk,PeriodFk,TankFk,SpeciesFk,SpeciesText,SpeciesText2,Qty,Comment,StuffFk,OrderFk,SizeFk")] TankLog tankLog = null)
+        {
+            if(tankLog != null)
+            {
+                /* need to change the date format to be consistent with the way
+                   other page display date field, also add additional information to the dropdownlist */
+                ViewData["PeriodFk"] = new SelectList(
+                    (from x in _context.MovementPeriod
+                     select new
+                     {
+                         IdPk = x.IdPk,
+                         Text = x.StartDate.ToString("yyyy-MM-dd") +
+                               " " + x.Text
+                     }
+                    ),
+                    "IdPk", "Text", tankLog.PeriodFk);
+                ViewData["SizeFk"] = new SelectList(_context.RecordPetSize, "IdPk", "Description", tankLog.SizeFk);
+                ViewData["SpeciesFk"] = new SelectList(_context.MarineSpecies.AsNoTracking(), "IdPk", "Scientific", tankLog.SpeciesFk);
+                ViewData["StuffFk"] = new SelectList(_context.SysStuff, "IdPk", "IdCode", tankLog.StuffFk);
+                ViewData["TankFk"] = new SelectList(_context.Tank, "IdPk", "IdCode", tankLog.TankFk);
+            }
+            else
+            {
+                /* need to change the date format to be consistent with the way
+                   other page display date field, also add additional information to the dropdownlist */
+                ViewData["PeriodFk"] = new SelectList(
+                    (from x in _context.MovementPeriod
+                     select new
+                     {
+                         IdPk = x.IdPk,
+                         Text = x.StartDate.ToString("yyyy-MM-dd") +
+                               " " + x.Text
+                     }
+                    ),
+                    "IdPk", "Text");
+                ViewData["SizeFk"] = new SelectList(_context.RecordPetSize, "IdPk", "Description");
+                ViewData["SpeciesFk"] = new SelectList(_context.MarineSpecies.AsNoTracking(), "IdPk", "Scientific");
+                ViewData["StuffFk"] = new SelectList(_context.SysStuff, "IdPk", "IdCode");
+                ViewData["TankFk"] = new SelectList(_context.Tank, "IdPk", "IdCode");
+            }
         }
     }
 }

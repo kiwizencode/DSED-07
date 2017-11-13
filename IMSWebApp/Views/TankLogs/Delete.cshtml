@@ -36,7 +36,16 @@
                     @Html.DisplayNameFor(model => model.PeriodFkNavigation)
                 </dt>
                 <dd>
-                    @Html.DisplayFor(model => model.PeriodFkNavigation.IdPk)
+                    @*Html.DisplayFor(model => model.PeriodFkNavigation.IdPk)*@
+                    @* 
+                        Merge two data in @Html.DisplayFor in ASP.Net MVC
+                        https://stackoverflow.com/questions/42809731/merge-two-data-in-html-displayfor-in-asp-net-mvc    
+                    *@
+                    @{ 
+                        var text = Model.PeriodFkNavigation.StartDate.ToString("yyyy-MM-dd") +
+                                    " " + Model.PeriodFkNavigation.Text;
+                        @Html.DisplayFor(model => text)
+                    }
                 </dd>
                 <dt>
                     @Html.DisplayNameFor(model => model.TankFkNavigation)
