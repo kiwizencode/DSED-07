@@ -234,7 +234,7 @@ namespace IMSWebApp.Controllers
 
         private bool TankLogDailyExists(int id)
         {
-            return _context.TankLogDaily.Any(e => e.IdPk == id);
+            return _context.TankLogDaily.AsNoTracking().Any(e => e.IdPk == id);
         }
         /* 
          I following the uri 
