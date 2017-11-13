@@ -1,0 +1,107 @@
+﻿@model IEnumerable<IMSWebApp.Models.TankLogDaily>
+
+@{
+    ViewData["Title"] = "Daily Mortality Registry";
+}
+
+<!-- Create a panel to hold all elements in the page -->
+<div class="panel panel-info">
+    <!-- Panel Heading -->
+    <div class="panel-heading">
+        <h2>
+            <a class="btn btn-warning btn-lg" asp-action="Create">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+            &nbsp;&nbsp;@ViewData["Title"]
+        </h2>
+    </div>
+    <!-- Panel Body -->
+    <div class="panel-body">
+
+        @*
+        Bootstrap 3 Table inside a panel overflowing
+        https://stackoverflow.com/questions/25071030/bootstrap-3-table-inside-a-panel-overflowing
+        *@
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LogDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LogFkNavigation.TankFkNavigation.IdCode)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LogFkNavigation.SpeciesFkNavigation)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Qty)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ReasonFkNavigation)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Comment)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.StuffFkNavigation)
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+@*
+                    @foreach (var item in Model.OrderBy(x => x.LogFkNavigation.TankFkNavigation.IdCode)
+                        .ThenBy(x => x.LogDate))
+*@
+                    @foreach(var item in Model.OrderBy(x => x.LogDate))
+                    {
+                        <tr>
+                            <!-- set the column to just fit contents-->
+                            <td style="width:1%;white-space:nowrap">
+                                <div>
+                                    <a class="btn btn-success btn-sm" asp-action="Edit" asp-route-id="@item.IdPk">
+                                        <span class='glyphicon glyphicon-pencil'></span>
+                                    </a>
+@*
+                                    <a class="btn btn-primary btn-sm" asp-action="Details" asp-route-id="@item.IdPk">
+                                        <span class='glyphicon glyphicon-search'></span>
+                                    </a>
+*@
+                                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.IdPk">
+                                        <span class='glyphicon glyphicon-trash'></span>
+                                    </a>
+                                </div>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LogDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LogFkNavigation.TankFkNavigation.IdCode)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LogFkNavigation.SpeciesFkNavigation.Scientific)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Qty)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ReasonFkNavigation.Text)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Comment)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.StuffFkNavigation.IdCode)
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

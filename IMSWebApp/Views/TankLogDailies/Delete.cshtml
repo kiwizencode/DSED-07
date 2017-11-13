@@ -1,7 +1,7 @@
-﻿@model IMSWebApp.Models.Tank
+﻿@model IMSWebApp.Models.TankLogDaily
 
 @{
-    ViewData["Title"] = "Tanks";
+    ViewData["Title"] = "Daily Mortality Registry";
 }
 
 <!-- Create style that is similiar to Create/Edit Menu -->
@@ -24,7 +24,7 @@
     <!-- Panel Heading -->
     <div class="panel-heading">
         <h2>
-            <span class='glyphicon glyphicon-trash' style="color:#d9534f"></span>
+            <span class='glyphicon glyphicon-plus' style="color:rgb(240, 173, 78)"></span>
             &nbsp;@ViewData["Title"]
         </h2>
     </div>
@@ -33,41 +33,54 @@
         <div>
             <dl>
                 <dt>
-                    @Html.DisplayNameFor(model => model.IdCode)
+                    @Html.DisplayNameFor(model => model.LogDate)
                 </dt>
                 <dd>
-                    @Html.DisplayFor(model => model.IdCode)
+                    @Html.DisplayFor(model => model.LogDate)
                 </dd>
                 <dt>
-                    @Html.DisplayNameFor(model => model.Text)
+                    @Html.DisplayNameFor(model => model.Qty)
                 </dt>
                 <dd>
-                    @Html.DisplayFor(model => model.Text)
+                    @Html.DisplayFor(model => model.Qty)
                 </dd>
                 <dt>
-                    @Html.DisplayNameFor(model => model.Rfid)
+                    @Html.DisplayNameFor(model => model.Comment)
                 </dt>
                 <dd>
-                    @Html.DisplayFor(model => model.Rfid)
+                    @Html.DisplayFor(model => model.Comment)
                 </dd>
                 <dt>
-                    @Html.DisplayNameFor(model => model.BayFkNavigation)
+                    @Html.DisplayNameFor(model => model.LogFkNavigation)
                 </dt>
                 <dd>
-                    @Html.DisplayFor(model => model.BayFkNavigation.IdCode)
+                    @Html.DisplayFor(model => model.LogFkNavigation.IdPk)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ReasonFkNavigation)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ReasonFkNavigation.IdPk)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.StuffFkNavigation)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.StuffFkNavigation.IdCode)
                 </dd>
             </dl>
 
             <form asp-action="Delete">
                 <input type="hidden" asp-for="IdPk" />
                 <input type="submit" value="Delete" class="btn btn-danger btn-lg btn-block" />
+                
             </form>
         </div>
-
     </div>
     <!-- Panel Footer -->
     <div class="panel-footer">
         <a class="btn btn-primary btn-lg btn-block" asp-action="Index">Back to List</a>
     </div>
 </div>
+
 

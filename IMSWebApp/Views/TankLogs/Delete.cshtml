@@ -1,7 +1,7 @@
 ﻿@model IMSWebApp.Models.TankLog
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Tank Logs Registry";
 }
 
 <!-- Create style that is similiar to Create/Edit Menu -->
@@ -14,8 +14,8 @@
     dd {
         border-radius: 5px;
         border: 1px solid #bbb;
-        border-top: 3px solid #ddd;
-        padding: 5px 0px 5px 10px;
+        border-top: 2px solid #ddd;
+        padding: 6px 0px 7px 10px;
     }
 </style>
 
@@ -23,7 +23,10 @@
 <div class="panel panel-info">
     <!-- Panel Heading -->
     <div class="panel-heading">
-
+        <h2>
+            <span class='glyphicon glyphicon-trash' style="color:#d9534f"></span>
+            &nbsp;@ViewData["Title"]
+        </h2>
     </div>
     <!-- Panel Body -->
     <div class="panel-body">

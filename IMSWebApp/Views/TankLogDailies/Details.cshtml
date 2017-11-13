@@ -1,0 +1,66 @@
+﻿@model IMSWebApp.Models.TankLogDaily
+
+@{
+    ViewData["Title"] = "Daily Mortality Registry";
+}
+
+<<!-- Create a panel to hold all elements in the page -->
+<div class="panel panel-info">
+    <!-- Panel Heading -->
+    <div class="panel-heading">
+
+    </div>
+    <!-- Panel Body -->
+    <div class="panel-body">
+
+    </div>
+    <!-- Panel Footer -->
+    <div class="panel-footer">
+
+    </div>
+</div>
+
+<div>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.LogDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LogDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Qty)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Qty)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comment)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LogFkNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LogFkNavigation.IdPk)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ReasonFkNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ReasonFkNavigation.IdPk)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StuffFkNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StuffFkNavigation.IdCode)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdPk">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
