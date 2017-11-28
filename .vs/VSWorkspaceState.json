@@ -2,10 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\IMSWebApp",
-    "\\IMSWebApp\\Controllers",
-    "\\IMSWebApp\\Views",
     "\\IMSWebApp\\Views\\Home"
   ],
-  "SelectedNode": "\\IMSWebApp\\Startup.cs",
+  "SelectedNode": "\\IMSWebApp\\IMSWebApp.sln",
   "PreviewInSolutionExplorer": false
 }
